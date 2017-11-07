@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107001937) do
+ActiveRecord::Schema.define(version: 20171107010852) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20171107001937) do
     t.string "city"
     t.string "postal_code"
     t.string "country"
-    t.integer "province_id"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,15 +67,12 @@ ActiveRecord::Schema.define(version: 20171107001937) do
   create_table "line_items", force: :cascade do |t|
     t.integer "quantity"
     t.decimal "price"
-    t.integer "product_id"
-    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
     t.string "status"
-    t.integer "customer_id"
     t.decimal "pst_rate"
     t.decimal "gst_rate"
     t.decimal "hst_rate"
@@ -89,7 +85,6 @@ ActiveRecord::Schema.define(version: 20171107001937) do
     t.string "description"
     t.decimal "price"
     t.integer "stocky_quantity"
-    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
