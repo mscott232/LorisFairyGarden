@@ -1,7 +1,0 @@
-<h1>Products#index</h1>
-<%= paginate @products %>
-
-<% @products.each do | prod | %>
-  <p>Name: <%= prod.name %> Description: <%= prod.description %> </p>
-  <p><%= link_to 'Details', product_path(prod) %></p>
-<% end %>
