@@ -1,10 +1,5 @@
 h1
   | Products#index
-
-  = form_tag(search_products_path) do
-  = text_field_tag :term
-  = submit_tag 'Search'
-
 = paginate @products
 - @products.each do | prod |
   p
