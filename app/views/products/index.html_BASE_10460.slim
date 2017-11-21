@@ -1,0 +1,11 @@
+h1
+  | Products#index
+= paginate @products
+- @products.each do | prod |
+  p
+    | Name:
+    = prod.name
+    |  Description:
+    = prod.description
+  p
+    = link_to 'Details', product_path(prod)
