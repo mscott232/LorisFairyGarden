@@ -7,4 +7,9 @@ class Product < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, length: { minimum: 3 }
 
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+    where("description LIKE ?", "%#{search}%")
+  end
+
 end
