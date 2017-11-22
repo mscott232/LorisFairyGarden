@@ -1,5 +1,5 @@
 ActiveAdmin.register Order do
 
-  permit_params :status, :customer_id, :pst_rate, :gst_rate, :hst_rate
+  permit_params :customer_id, :order_status_id, :pst_rate, :gst_rate, :hst_rate
 
 end
