@@ -8,7 +8,7 @@
 <%= paginate @products %>
 <% if @products.present? %>
   <% @products.each do | prod | %>
-    <p>Name: <%= prod.name %> Description: <%= prod.description %> </p>
+    <%= render "product_row", product: prod, order_item: @line_item %>
     <p><%= link_to 'Details', product_path(prod) %></p>
   <% end %>
 <% else %>

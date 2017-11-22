@@ -5,5 +5,8 @@ Rails.application.routes.draw do
 
   get 'products' => 'products#index', as: 'products'
   get 'products/:id' => 'products#show', as: 'product', id: /\d+/
+  get 'cart/:id' => 'cart#show', as: 'cart'
+  # resources :cart, only: [:show]
+  resources :line_items, only: [:create, :update, :destroy]
   root to: 'products#index'
 end
