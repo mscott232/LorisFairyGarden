@@ -1,8 +1,1 @@
-<<<<<<< HEAD
-
-=======
-<%= link_to " Items in Cart ( )", cart_path, class: "btn btn-link" %>
-
-<!-- #{current_order.line_items.size} -->
-<!-- #{number_to_currency current_order.subtotal}  -->
->>>>>>> e43e9ae9966699640eab0718762e7f0f856aab4c
+<%= link_to "#{current_order.line_items.size} Items in Cart (#{number_to_currency current_order.subtotal})", cart_path, class: "btn btn-link" %>

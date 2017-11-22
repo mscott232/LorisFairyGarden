@@ -6,8 +6,6 @@ class Order < ApplicationRecord
   before_create :set_order_status
   before_save :update_subtotal
 
-  validates :customer_id, :order_status_id, presence: true
-
   def subtotal
     line_items.collect { |li| li.valid? ? (li.quantity * li.unit_price) : 0}.sum
   end
