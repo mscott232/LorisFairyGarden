@@ -1,4 +1,4 @@
-<h1>Products#index</h1>
+<h3 class="text-center">Products for Sale</h3>
 
 <%= form_tag(products_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
@@ -7,10 +7,20 @@
 
 <%= paginate @products %>
 <% if @products.present? %>
+<<<<<<< HEAD
   <% @products.each do | prod | %>
     <%= render "product_row", product: prod, order_item: @line_item %>
     <p><%= link_to 'Details', product_path(prod) %></p>
+=======
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+  <% @products.each do | product | %>
+    <%= render "product_row", product: product, line_item: @line_item %>
+    <p><%= link_to 'Details', product_path(product) %></p>
+>>>>>>> e43e9ae9966699640eab0718762e7f0f856aab4c
   <% end %>
+  </div>
+</div>
 <% else %>
   <p>There are no products containing the term(s) <%= params[:search] %></p>
 <% end %>

@@ -6,7 +6,11 @@
     </div>
     <div class="col-xs-4">
 
+<<<<<<< HEAD
       <%= form_for @line_item, remote: true do |f| %>
+=======
+      <%= form_for line_item, remote: true do |f| %>
+>>>>>>> e43e9ae9966699640eab0718762e7f0f856aab4c
       <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency product.price %></span></h4>
         <div class="input-group">
           <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
