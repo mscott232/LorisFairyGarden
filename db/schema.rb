@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123013607) do
+ActiveRecord::Schema.define(version: 20171123020938) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -57,9 +57,6 @@ ActiveRecord::Schema.define(version: 20171123013607) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "username"
-    t.string "first_name"
-    t.string "last_name"
     t.string "address"
     t.string "city"
     t.string "postal_code"
@@ -83,6 +80,7 @@ ActiveRecord::Schema.define(version: 20171123013607) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "name"
     t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["province_id"], name: "index_customers_on_province_id"
