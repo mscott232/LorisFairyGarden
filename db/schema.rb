@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122203332) do
+ActiveRecord::Schema.define(version: 20171122230618) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -95,11 +95,9 @@ ActiveRecord::Schema.define(version: 20171122203332) do
     t.decimal "hst_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "customer_id"
     t.integer "order_status_id"
     t.decimal "subtotal"
     t.decimal "total"
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
   end
 
