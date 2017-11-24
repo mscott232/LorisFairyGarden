@@ -16,7 +16,7 @@
 <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
 <%= submit_tag "Search" %>
 <% end %>
-
+<hr>
 <%= paginate @products %>
 <% if @products.present? %>
 <div class="row">
