@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-# <% if @order.errors.any? || @line_item.errors.any? %>
-#   alert("not valid.")
-# <% else %>
-#   $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text')")
-# <% end %>
-=======
 <% if @order.errors.any? || @line_item.errors.any? %>
-  alert("not valid.")
+  alert("<%= @order.errors.full_messages %>")
 <% else %>
-  $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text')")
+  $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 <% end %>
->>>>>>> e43e9ae9966699640eab0718762e7f0f856aab4c

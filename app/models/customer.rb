@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :lockable
 
-  belongs_to :province
+  # belongs_to :province
   has_many :orders
 
   validates :name, :address, :city, :postal_code, presence: true

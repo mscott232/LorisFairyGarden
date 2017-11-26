@@ -13,6 +13,6 @@
   </p>
 <% else %>
   <% @line_items.each do |line_item| %>
-    <%= render 'carts/cart_row', product: line_item.product, line_item: line_item, show_total: true %>
+    <%= render 'cart/cart_row', product: line_item.product, line_item: line_item, show_total: true %>
   <% end %>
 <% end %>

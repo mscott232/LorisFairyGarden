@@ -1,11 +1,7 @@
 <% content_for :top_content do %>
   <div class="jumbotron">
     <div class="container">
-      <h1>Welcome!</h1>
-      <p>Register to get started.</p>
-      <p>
-        <%= link_to 'Register', new_customer_registration_path, class: 'btn btn-primary btn-lg' %>
-      </p>
+
     </div>
   </div>
 <% end %>
@@ -13,20 +9,20 @@
 <h3 class="text-center">Products for Sale</h3>
 
 <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
-<%= submit_tag "Search" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+  <%= submit_tag "Search" %>
 <% end %>
 <hr>
 <%= paginate @products %>
 <% if @products.present? %>
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-  <% @products.each do | product | %>
-    <%= render "product_row", product: product, line_item: @line_item %>
-    <p><%= link_to 'Details', product_path(product) %></p>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+    <% @products.each do | product | %>
+      <%= render "product_row", product: product, line_item: @line_item %>
+      <p><%= link_to 'Details', product_path(product) %></p>
+    <% end %>
+    </div>
   </div>
-</div>
 <% else %>
   <p>There are no products containing the term(s) <%= params[:search] %></p>
 <% end %>
