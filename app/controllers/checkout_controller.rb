@@ -14,6 +14,7 @@ class CheckoutController < ApplicationController
       @province = Province.where(:id => current_customer.province_id).first
       @order.update_attributes(:customer_id => current_customer.id, :pst_rate => @province.pst, :gst_rate => @province.gst, :hst_rate => @province.hst)
     end
+    
     def calculate_total
       @order = current_order
       total = @order.subtotal
