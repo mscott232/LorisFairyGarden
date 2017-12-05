@@ -62,3 +62,4 @@ gem 'faker'
 gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
 gem 'stripe'
+gem 'dotenv-rails', :groups => [:development, :test]
