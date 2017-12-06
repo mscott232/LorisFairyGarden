@@ -4,7 +4,8 @@
     <% if customer_signed_in? %>
       <li><%= link_to 'Check out', checkout_path %></li>
     <% else %>
-        <p> To proceed with checkout please signup.</p>
+        <p> To proceed with checkout please signup or log in.</p>
         <li><%= link_to 'Sign up', new_customer_registration_path %></li>
+        <li><%= link_to 'Log in', new_customer_session_path %></li>
     <% end %>
 </div>

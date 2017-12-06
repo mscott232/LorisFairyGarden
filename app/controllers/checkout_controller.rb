@@ -46,18 +46,24 @@ class CheckoutController < ApplicationController
     def calculate_total
       @order = current_order
       total = @order.subtotal
+
+      hst_amount = 0
+      pst_amount = 0
+      gst_amount = 0
+
       unless @order.pst_rate == 0
-        total += (total * @order.pst_rate).round(2)
+        pst_amount = (total * @order.pst_rate).round(2)
       end
 
       unless @order.gst_rate == 0
-        total += (total * @order.gst_rate).round(2)
+        gst_amount = (total * @order.gst_rate).round(2)
       end
 
       unless @order.hst_rate == 0
-        total += (total * @order.hst_rate).round(2)
+        hst_amount = (total * @order.hst_rate).round(2)
       end
 
+      total += gst_amount + pst_amount + hst_amount
       @order.update_attribute(:total, total)
     end
 end
